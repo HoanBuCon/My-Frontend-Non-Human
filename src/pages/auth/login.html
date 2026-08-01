@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Style toàn cục -->
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <!-- Style riêng của module auth -->
+    <link rel="stylesheet" href="/src/styles/features/auth/auth.css">
+    <!-- Thư viện icon Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <main class="auth-page">
+        <button
+            id="language-button"
+            class="language-button"
+            type="button"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+            aria-controls="language-menu">
+            <img
+                class="language-button__icon"
+                src="/src/assets/pages/login/dia_cau_language.svg"
+                alt="">
+            <span class="language-button__text">
+                Tiếng Việt
+            </span>
+            <img
+                class="language-button__arrow"
+                src="/src/assets/pages/login/mui_ten_drop.svg"
+                alt="">
+        </button>
+
+        <section class="auth-page__left">
+            <section class="auth-banner">
+                <figure class="auth-banner__figure">
+                    <img
+                        class="auth-banner__image"
+                        src="/src/assets/pages/login/auth_banner.svg"
+                        alt="Welcome to Peak">
+                    <figcaption  class="auth-banner__caption">
+                        <h1 class="auth-banner__title">
+                            Chào mừng đến với SayPeak69
+                        </h1>
+                        <p class="auth-banner__description">
+                            Ma ngga u look hard asf, lemme help u out!
+                        </p>
+                    </figcaption>
+                    <nav class="auth-banner__pagination">
+                        <span class="auth-banner__dot auth-banner__dot--active"></span>
+                        <span class="auth-banner__dot"></span>
+                        <span class="auth-banner__dot"></span>
+                    </nav>
+                </figure>
+            </section>
+        </section>
+
+        <section class="auth-page__right">
+            <div class="auth-card">
+                <header class="auth-card__header">
+                    <img
+                        class="auth-card__logo"
+                        src="/src/assets/pages/login/vss_logo.svg"
+                        alt="VSS Logo">
+                    <h2 class="auth-card__title">
+                        Đăng nhập vào tài khoản của bạn
+                    </h2>
+                </header>
+                <div class="auth-card__body">
+                    <form class="login-form">
+                        <div class="login-form__field">
+                            <input type="text" id="username" class="login-form__input" placeholder=" " required>
+                            <label for="username" class="login-form__label"> Nhập tài khoản</label>
+                        </div>
+                        <div class="login-form__field">
+                            <input type="password" id="password" class="login-form__input" placeholder=" " required>
+                            <label for="password" class="login-form__label"> Nhập mật khẩu</label>
+                            <button type="button" class="login-form__password-toggle" aria-label="Hiện mật khẩu"><i data-lucide="eye"></i></button>
+                        </div>
+                        <div class="login-form__options">
+                            <label class="login-form__remember-me">
+                                <input type="checkbox" id="remember-me" name="remember-me" class="login-form__checkbox">
+                                <span class="login-form__checkmark"></span>
+                                <span class="login-form__remember-text">Lưu mật khẩu</span>
+                            </label>
+                            <a href="#" class="login-form__forgot-password">Quên mật khẩu?</a>
+                        </div>
+                        <button type="submit" class="login-form__submit">Đăng nhập</button>
+                    </form>
+                </div>
+                <footer class="auth-card__footer">
+                    <span>Bạn chưa có tài khoản?</span>
+                    <a href="#" class="auth-card__footer-link">Đăng ký</a>
+                </footer>
+            </div>
+        </section>
+    </main>
+    <script>lucide.createIcons();</script>
+    <script src="/src/scripts/auth/genius.js"></script>
+    <script src="/src/scripts/auth/password-toggle.js"></script>
+</body>
+
+</html>

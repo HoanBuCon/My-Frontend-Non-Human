@@ -1,0 +1,64 @@
+// =====================================
+// User Interaction
+// =====================================
+
+// Control text selection
+@mixin user-select($value) {
+    -webkit-user-select: $value;
+    -moz-user-select: $value;
+    -ms-user-select: $value;
+    user-select: $value;
+}
+
+// Disable tap highlight on touch devices
+@mixin tap-highlight-none {
+    -webkit-tap-highlight-color: transparent;
+}
+
+// Hide scrollbar
+@mixin hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+// Disable image dragging
+@mixin no-drag {
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
+// Single line truncate
+@mixin truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// Flex center
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Absolute center
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Button reset
+@mixin button-reset {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+}

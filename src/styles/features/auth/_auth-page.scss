@@ -1,0 +1,22 @@
+// ======================================================
+// AUTH PAGE - LAYOUT
+// ======================================================
+@import '../../abstracts/variables';
+
+.auth-page {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+
+    &__left {
+        flex: 0 0 65%;
+        overflow: hidden;
+    }
+
+    &__right {
+        flex: 0 0 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
