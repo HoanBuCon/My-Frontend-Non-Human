@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass src/styles/main.scss:src/styles/main.css src/styles/features:src/styles/features --style=expanded --no-source-map",
-    "sass:watch": "sass --watch src/styles/main.scss:src/styles/main.css src/styles/features:src/styles/features --style=expanded --no-source-map",
+    "sass": "sass --load-path=src/styles src/styles/main.scss:src/styles/main.css src/styles/features:src/styles/features --style=expanded --no-source-map",
+    "sass:watch": "sass --load-path=src/styles --watch src/styles/main.scss:src/styles/main.css src/styles/features:src/styles/features --style=expanded --no-source-map",
     "serve": "live-server --port=5500 .",
     "genius": "node src/scripts/auth/genius.js",
     "dev": "npm run genius && concurrently -n SASS,SERVER -c blue,green \"npm run sass:watch\" \"npm run serve\""

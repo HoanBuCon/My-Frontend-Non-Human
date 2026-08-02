@@ -1,8 +1,8 @@
 // ======================================================
 // AUTH CARD
 // ======================================================
-@import '../../abstracts/variables';
-@import '../../abstracts/mixins';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
 
 // Auth Card
 .auth-card {
@@ -28,6 +28,7 @@
     &__logo {
         width: clamp(96px, 100%, 282px);
         height: auto;
+        @include user-select(none);
     }
 
     &__title {
