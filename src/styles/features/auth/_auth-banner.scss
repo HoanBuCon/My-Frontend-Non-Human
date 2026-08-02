@@ -5,58 +5,75 @@
 @import 'abstracts/mixins';
 
 .auth-banner {
-    width: 100%;
-    height: 100%;
+    display: none; // Mobile: ẩn banner, chỉ hiện card
 
-    &__figure {
-        position: relative;
-        margin: 0;
-        width: 100%;
-        height: 100%;
+    // Desktop hiện banner
+    @include respond-min($bp-lg) {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: max-content; // Tự động theo tỉ lệ ảnh
+        z-index: 0;
     }
 
     &__image {
         display: block;
-        width: 100%;
         height: 100%;
-        object-fit: cover;
+        width: auto; // Tự động theo tỉ lệ ảnh gốc
     }
 
     &__caption {
         position: absolute;
+        bottom: 15%;
+        left: 46.125%; // Cố căn giữa cái banner, lmao
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
         font-family: $font-family-primary;
         color: $secondary-1;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 15%;
-        width: 100%;    
-        text-align: center;
         cursor: default;
+        z-index: 1;
         @include user-select(none);
     }
 
     &__title {
         font-weight: $font-weight-medium;
-        font-size: $font-size-4xl;
+        font-size: $font-size-2xl; // Default: 24px
         margin-top: 16px;
+
+        @include respond-min($bp-lg) {
+            font-size: $font-size-3xl; // 992px: 32px
+        }
+        @include respond-min($bp-xl) {
+            font-size: $font-size-4xl; // 1200px: 48px
+        }
     }
 
     &__description {
         font-weight: $font-weight-medium;
-        font-size: $font-size-2xl;
+        font-size: $font-size-lg; // Default: 18px
         margin-top: 8px;
+
+        @include respond-min($bp-lg) {
+            font-size: $font-size-xl; // 992px: 20px
+        }
+        @include respond-min($bp-xl) {
+            font-size: $font-size-2xl; // 1200px: 24px
+        }
     }
 
     &__pagination {
         position: absolute;
+        bottom: 10%;
+        left: 46.125%; // Cố căn giữa cái banner, lmao
+        transform: translateX(-50%);
         display: flex;
         justify-content: center;
         align-items: center;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 10%;
-        margin-top: 16px;
         gap: 8px;
+        z-index: 1;
     }
 
     &__dot {

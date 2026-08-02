@@ -79,7 +79,7 @@ $card-bg: $bg-6;
 
 // Border
 $border-default: $bg-3;
-$border-focus:$primary-1;
+$border-focus: $bg-1;
 
 // Input
 $input-bg: $bg-7;
@@ -121,3 +121,20 @@ $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-extrabold: 800;
+
+// ======================================================
+// BREAKPOINTS (Mobile-first)
+// ======================================================
+$bp-xs: 480px;   // Điện thoại nhỏ
+$bp-sm: 576px;   // Điện thoại
+$bp-md: 768px;   // Tablet dọc
+$bp-lg: 992px;   // Tablet ngang / Laptop nhỏ
+$bp-xl: 1200px;  // Desktop
+$bp-xxl: 1400px; // Desktop lớn
+
+// Container widths (mobile-first)
+$container-sm: 540px;
+$container-md: 720px;
+$container-lg: 960px;
+$container-xl: 1140px;
+$container-xxl: 1320px;

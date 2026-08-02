@@ -1,22 +1,55 @@
 // ======================================================
-// AUTH PAGE - LAYOUT
+// AUTH PAGE - LAYOUT (Mobile-first)
 // ======================================================
 @import 'abstracts/variables';
+@import 'abstracts/mixins';
 
 .auth-page {
+    position: relative; // Để banner absolute tràn toàn trang
     display: flex;
-    height: 100vh;
+    flex-direction: column; // Mobile: xếp dọc
+    min-height: 100vh;
     overflow: hidden;
 
     &__left {
-        flex: 0 0 65%;
+        display: none; // Mobile: ẩn banner
         overflow: hidden;
     }
 
     &__right {
-        flex: 0 0 35%;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 24px;
+        min-height: 100vh;
+    }
+
+    // Tablet (768px)
+    @include respond-min($bp-md) {
+        &__right {
+            padding: 48px;
+        }
+    }
+
+    // Desktop (992px)
+    @include respond-min($bp-lg) {
+        flex-direction: row; // Desktop: 2 cột ngang
+        height: 100vh;
+
+        &__left {
+            display: block; // Desktop: hiện banner
+            order: 1;
+            flex: 1 1 65%; // Banner co giãn, nhường chỗ cho card
+            min-width: 0; // Cho phép banner co nhỏ lại
+        }
+
+        &__right {
+            order: 2;
+            flex: 0 0 35%;
+            min-width: 649px; // Width tối thiểu của Section = Width Card 569px + margin 80px = 649px
+            justify-content: flex-end; // Card dính vào cạnh phải viewport
+            padding: 0;
+            min-height: auto;
+        }
     }
 }

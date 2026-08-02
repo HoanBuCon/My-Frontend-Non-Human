@@ -26,6 +26,10 @@ h1 {
   font-weight: 700;
   color: #EE0033;
   text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 p.subtitle {
@@ -35,6 +39,10 @@ p.subtitle {
   text-align: center;
   max-width: 500px;
   line-height: 1.6;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 nav {
@@ -62,6 +70,10 @@ nav {
   background: #EE0033;
   color: #ffffff;
   transition: background 0.2s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .nav-link--primary:hover {

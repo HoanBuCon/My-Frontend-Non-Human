@@ -1,7 +1,10 @@
 // ======================================================
 // LANGUAGE BUTTON
+// Mobile: nằm trong header của card
+// Desktop: góc trên phải
 // ======================================================
 @import 'abstracts/variables';
+@import 'abstracts/mixins';
 
 .language-button {
     display: inline-flex;
@@ -15,6 +18,7 @@
     gap: 8px;
     background: transparent;
     cursor: pointer;
+    z-index: 10;
 
     &__icon {
         width: 18px;

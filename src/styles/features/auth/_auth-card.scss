@@ -6,17 +6,26 @@
 
 // Auth Card
 .auth-card {
+    position: relative; // Để z-index hoạt động
+    z-index: 1; // Card nổi TRÊN banner
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 569px;
+    width: 100%;
+    max-width: 569px;
     min-height: 621px;
-    margin-right: 80px;
+    margin-right: 0; // Mobile: tắt margin-right
     padding: 48px;
     background: $page-bg;
     box-shadow: $shadow-gradient-blue;
     border-radius: 16px;
+
+    // Desktop: margin-right như thiết kế của figma
+    @include respond-min($bp-lg) {
+        width: 569px;
+        margin-right: 80px;
+    }
 
     &__header {
         display: flex;
@@ -107,7 +116,23 @@
             color .2s ease-in-out;
 
         &:focus {
-            border-color: $primary-1;
+            border-color: $border-focus;
+        }
+    }
+
+    // Input bị lỗi (do authChecking.js thêm class)
+    &__input--error {
+        border-color: $failure-1;
+
+        &:focus {
+            border-color: $failure-1;
+        }
+
+        // Label đỏ khi input lỗi
+        + .login-form__label.login-form__label,
+        &:focus + .login-form__label.login-form__label,
+        &:not(:placeholder-shown) + .login-form__label.login-form__label {
+            color: $failure-1;
         }
     }
 
@@ -116,7 +141,8 @@
         top: 0;
         transform: translateY(-50%);
         font-size: $font-size-xs;
-        color: $primary-1;
+        color: $border-focus;
+        padding: 0 4px;
     }
 
     // Label khi input đã điền giá trị
@@ -124,11 +150,13 @@
         top: 0;
         transform: translateY(-50%);
         font-size: $font-size-xs;
+        padding: 0 4px;
     }
 
     // Label khi input có giá trị nhưng không focus
     &:not(:focus):not(:placeholder-shown) + .login-form__label {
         color: $text-placeholder;
+        padding: 0 4px;
     }
 
     &__label {
@@ -148,6 +176,20 @@
             color .2s ease-in-out;
         cursor: text;
         @include user-select(none);
+        pointer-events: none;
+
+        // Text mặc định (chưa focus / chưa có giá trị)
+        &::before {
+            content: attr(data-default);
+        }
+
+        // Khi focus HOẶC có giá trị thì đổi text
+        .login-form__input:focus + &,
+        .login-form__input:not(:placeholder-shown) + & {
+            &::before {
+                content: attr(data-active);
+            }
+        }
     }
 
     &__password-toggle {

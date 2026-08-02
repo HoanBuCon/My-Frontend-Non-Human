@@ -1,4 +1,30 @@
 // =====================================
+// RESPONSIVE - Media Query Mixins (Mobile-first)
+// =====================================
+@import 'abstracts/variables';
+
+// Mobile-first: áp dụng cho màn hình >= breakpoint
+@mixin respond-min($bp) {
+    @media (min-width: $bp) {
+        @content;
+    }
+}
+
+// Desktop-first: áp dụng cho màn hình <= breakpoint (dùng khi cần override desktop)
+@mixin respond-max($bp) {
+    @media (max-width: $bp) {
+        @content;
+    }
+}
+
+// Phạm vi giữa 2 breakpoint
+@mixin respond-between($min, $max) {
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+// =====================================
 // User Interaction
 // =====================================
 
