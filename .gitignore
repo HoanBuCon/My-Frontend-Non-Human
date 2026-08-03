@@ -107,3 +107,4 @@ cypress/screenshots/
 *.tgz
 *.bz2
 *.xz
+.vercel

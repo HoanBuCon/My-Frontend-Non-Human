@@ -46,8 +46,7 @@
         &__right {
             order: 2;
             flex: 0 0 35%;
-            min-width: 649px; // Width tối thiểu của Section = Width Card 569px + margin 80px = 649px
-            justify-content: flex-end; // Card dính vào cạnh phải viewport
+            justify-content: center;
             padding: 0;
             min-height: auto;
         }

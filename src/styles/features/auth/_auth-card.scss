@@ -21,7 +21,7 @@
     box-shadow: $shadow-gradient-blue;
     border-radius: 16px;
 
-    // Desktop: margin-right như thiết kế của figma
+    // Desktop
     @include respond-min($bp-lg) {
         width: 569px;
         margin-right: 80px;
